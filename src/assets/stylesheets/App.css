@@ -33,3 +33,6 @@
   color: var(--secondary-color-text);
   font-size: 14px;
 }
+.text--bold {
+  font-weight: bold;
+}
