@@ -12,7 +12,9 @@ const Cards = () => {
       weight: 0.5,
       count: 10,
       giftCount: 1,
+      description: 'Печень утки разварная с артишоками.',
       isHappy: false,
+      isDisable: false
     },
     {
       id: 2,
@@ -20,7 +22,9 @@ const Cards = () => {
       weight: 2,
       count: 40,
       giftCount: 2,
+      description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
       isHappy: false,
+      isDisable: false
     },
     {
       id: 3,
@@ -28,7 +32,9 @@ const Cards = () => {
       weight: 5,
       count: 100,
       giftCount: 5,
+      description: 'Филе из цыплят с трюфелями в бульоне.',
       isHappy: true,
+      isDisable: true
     },
   ];
 
@@ -44,7 +50,9 @@ const Cards = () => {
         weight={product.weight}
         count={product.count}
         giftCount={product.giftCount}
+        description={product.description}
         isHappy={product.isHappy}
+        isDisable={product.isDisable}
         setSelectedId={setSelectedId}
       />
     );
