@@ -16,8 +16,8 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-.card-wrapper:hover,
-.card-wrapper:hover .card__weight {
+.card-wrapper:not(.disable):hover,
+.card-wrapper:not(.disable):hover .card__weight {
   background-color: #2EA8E6;
 }
 .card-wrapper.active,
