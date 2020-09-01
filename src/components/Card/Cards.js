@@ -38,7 +38,7 @@ const Cards = () => {
     },
   ];
 
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState([]);
 
   const renderCardList = products.map((product) => {
     return (
