@@ -2,10 +2,20 @@
   font-family: "Exo";
   src: url("../fonts/Exo2.0-Thin.otf") format("opentype");
 }
-
-.page__body {
+* {
   box-sizing: border-box;
+}
+.page__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   background: url("../images/bg.png");
+}
+.page__header {
+  color: white;
+  font-family: "Exo", sans-serif;
+  font-size: 36px;
+  text-align: center;
 }
