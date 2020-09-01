@@ -3,6 +3,7 @@
   text-align: center;
   color: white;
   font-size: 13px;
+  line-height: 1.5;
 }
 .card__subtext-button {
   font-family: inherit;
