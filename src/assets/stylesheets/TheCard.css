@@ -1,0 +1,33 @@
+.cards {
+  display: flex;
+}
+.card-wrapper {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 509px;
+  background-color: red;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.card {
+  position: relative;
+  width: 97%;
+  height: 98%;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: white;
+  overflow: hidden;
+  background: url("../images/cat.png") white no-repeat;
+  background-position: 70% 170%;
+}
