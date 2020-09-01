@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/Exo2.0-Thin.otf") format("opentype");
+}
+
+.page__body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background: url("../images/bg.png");
+}
