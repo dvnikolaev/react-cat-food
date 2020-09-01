@@ -1,17 +1,21 @@
 import React from "react";
 
 const Gift = ({ giftCount }) => {
-  const getTextGift = () => {
-    if (giftCount === 1) {
-      return "мышь в подарок";
-    }
-    if (giftCount < 5) {
-      return `${giftCount} мыши в подарок`;
-    }
-    return `${giftCount} мышей в подарок`;
-  };
-
-  return <p className="card__gift text--secondary">{getTextGift()}</p>;
+  if (giftCount === 1) {
+    return <p className="card__gift text--secondary">мышь в подарок</p>;
+  }
+  if (giftCount < 5) {
+    return (
+      <p className="card__gift text--secondary">
+        <span className="text--bold">{giftCount}</span> мыши в подарок
+      </p>
+    );
+  }
+  return (
+    <p className="card__gift text--secondary">
+      <span className="text--bold">{giftCount}</span> мышей в подарок
+    </p>
+  );
 };
 
 export default Gift;

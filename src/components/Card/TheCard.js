@@ -62,7 +62,7 @@ const TheCard = ({
           <SubHeader className={classSelect} />
           <h3 className="card__header">Нямушка</h3>
           <p className="card__taste">c {taste}</p>
-          <p className="card__count text--secondary">{count} порций</p>
+          <p className="card__count text--secondary"><span className="text--bold">{count}</span> порций</p>
           <Gift giftCount={giftCount} />
           <IsHappy isHappy={isHappy} />
           <Weight classSelect={classSelect} weight={weight} />
