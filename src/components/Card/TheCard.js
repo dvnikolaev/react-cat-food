@@ -1,61 +1,68 @@
 import React from "react";
 
-const TheCard = ({ taste, weight, count, giftCount, isHappy, id, setSelectedId, selectedId }) => {
-  const renderGift = () => {
-    if (giftCount === 1) {
-      return <p className="card__gift text--secondary">мышь в подарок</p>;
-    }
-    if (giftCount < 5) {
-      return (
-        <p className="card__gift text--secondary">{giftCount} мыши в подарок</p>
-      );
-    }
-    return (
-      <p className="card__gift text--secondary">{giftCount} мышей в подарок</p>
-    );
-  };
+import SubHeader from "./Parts/SubHeader";
+import Gift from "./Parts/Gift";
+import IsHappy from "./Parts/IsHappy";
+import Weight from "./Parts/Weight";
+import SubText from "./Parts/SubText";
 
-  const renderIsHappy = () => {
-    if (!isHappy) {
-      return null;
-    }
-    return (
-      <span className="card__isHappy text--secondary">Заказчик доволен</span>
-    );
-  };
-
-  const renderWeight = () => {
-    return (
-      <div className={`card__weight ${classSelect()}`}>
-        <span className="card__weight-number">{weight}</span>
-        кг
-      </div>
-    );
-  };
-
+const TheCard = ({
+  taste,
+  weight,
+  count,
+  giftCount,
+  description,
+  isHappy,
+  id,
+  setSelectedId,
+  selectedId,
+  isDisable,
+}) => {
+  
   const classSelect = () => {
-    return selectedId === id ? 'active' : '';
-  }
+    return selectedId === id ? "active" : "";
+  };
+
+  const classDisable = () => {
+    return isDisable ? "disable" : "";
+  };
 
   const selectId = () => {
+    if (isDisable) {
+      return null;
+    }
     setSelectedId(id);
-  } 
+  };
 
   return (
     <li className="card-item">
-      <button className={`card-wrapper ${classSelect()}`} onClick={selectId}>
+      <button
+        className={`card-wrapper 
+                    ${classSelect()} 
+                    ${classDisable()}`
+        }
+        onClick={selectId}
+      >
         <div className="card">
-          <p className="card__subheader text-color--secondary">
-            Сказочное заморское яство
-          </p>
+          <SubHeader className={classSelect} />
           <h3 className="card__header">Нямушка</h3>
           <p className="card__taste">c {taste}</p>
           <p className="card__count text--secondary">{count} порций</p>
-          {renderGift()}
-          {renderIsHappy()}
-          {renderWeight()}
+          <Gift giftCount={giftCount} />
+          <IsHappy isHappy={isHappy} />
+          <Weight classSelect={classSelect} weight={weight} />
         </div>
       </button>
+      <SubText
+        isDisable={isDisable}
+        description={description}
+        taste={taste}
+        selectedId={selectedId}
+        id={id}
+        classDisable={classDisable}
+        classSelec={classSelect}
+        selectId={selectId}
+      />
     </li>
   );
 };
