@@ -27,11 +27,12 @@ const TheCard = ({
     return isDisable ? "disable" : "";
   };
 
-  const selectId = () => {
+  const selectId = (e) => {
     if (isDisable) {
       return null;
     }
     let localArray = [];
+    e.target.classList.remove('show');
 
     if (selectedId.includes(id)) {
       localArray = selectedId.filter(item => item !== id);  
@@ -41,6 +42,12 @@ const TheCard = ({
     setSelectedId(localArray);
   };
 
+  const mouseLeave = (e) =>{
+    if (selectedId.includes(id) && e.target.classList.contains('card-wrapper')){
+      e.target.classList.add('show');
+    } 
+  }
+
   return (
     <li className="card-item">
       <button
@@ -49,6 +56,7 @@ const TheCard = ({
                     ${classDisable()}`
         }
         onClick={selectId}
+        onMouseLeave={mouseLeave}
       >
         <div className="card">
           <SubHeader className={classSelect} />

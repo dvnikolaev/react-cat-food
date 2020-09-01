@@ -8,12 +8,12 @@
   color: var(--primary-selected-color);
 }
 
-.card-wrapper.active:hover 
+.card-wrapper.active.show:hover 
 .card__subheader {
   display: none;
 }
 
-.card-wrapper.active:hover 
+.card-wrapper.active.show:hover 
 .card__subheader:nth-child(2) {
   display: block;
 }

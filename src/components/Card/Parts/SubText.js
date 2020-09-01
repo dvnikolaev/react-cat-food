@@ -11,8 +11,8 @@ const SubText = ({
   selectId
 }) => {
 
-  const select = () => {
-    selectId();
+  const select = (e) => {
+    selectId(e);
   }
 
   if (isDisable) {
@@ -23,7 +23,7 @@ const SubText = ({
     );
   }
   if (selectedId.includes(id)) {
-    return <p className={`card__subtext ${classSelect}`}>{description}</p>;
+    return <p className={`card__subtext`}>{description}</p>;
   }
   return (
     <p className="card__subtext">
