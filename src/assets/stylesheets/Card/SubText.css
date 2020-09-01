@@ -1,0 +1,21 @@
+/* Надпись под карточкой */
+.card__subtext {
+  text-align: center;
+  color: white;
+  font-size: 13px;
+}
+.card__subtext-button {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.card-wrapper.disable + .card__subtext {
+  color: #D1D152;
+}
+.card__subtext-button-text {
+  border-bottom: 1px dashed var(--primary-color);
+}

@@ -16,6 +16,10 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+.card-wrapper:hover,
+.card-wrapper:hover .card__weight {
+  background-color: #2EA8E6;
+}
 .card-wrapper.active,
 .card__weight.active {
   background-color: var(--primary-selected-color);
@@ -25,6 +29,7 @@
   -webkit-filter: grayscale();
 }
 
+.card-wrapper.active:hover,
 .card-wrapper.active:hover .card__weight.active {
-  background-color: #e62e7a;
+  background-color: #E62E7A;
 }
