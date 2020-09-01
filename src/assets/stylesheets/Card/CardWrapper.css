@@ -1,0 +1,30 @@
+/* Кнопка - пачка */
+.card-wrapper {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 509px;
+  background-color: var(--primary-color);
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.card-wrapper.active,
+.card__weight.active {
+  background-color: var(--primary-selected-color);
+}
+.card-wrapper.disable {
+  filter: grayscale();
+  -webkit-filter: grayscale();
+}
+
+.card-wrapper.active:hover .card__weight.active {
+  background-color: #e62e7a;
+}

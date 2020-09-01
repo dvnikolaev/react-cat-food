@@ -1,30 +1,14 @@
+@import "./Card/SubHeader.css";
+@import "./Card/CardWrapper.css";
+
 .cardsList {
   display: flex;
   list-style: none;
   margin: 5px 0;
   padding: 0;
 }
-.card-wrapper {
-  border: none;
-  outline: none;
-  cursor: pointer;
+.card-item {
   margin-left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 320px;
-  height: 509px;
-  background-color: var(--primary-color);
-  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0 9%);
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-.card-wrapper.active,
-.card__weight.active {
-  background-color: var(--primary-selected-color);
 }
 .card {
   position: relative;
@@ -41,9 +25,6 @@
   background: url("../images/cat.png") white no-repeat;
   background-position: 70% 170%;
   padding: 0 48px;
-}
-.card__subheader {
-  margin: 21px 0 0;
 }
 .card__header {
   font-size: 48px;
@@ -86,7 +67,10 @@
   font-size: 21px;
   line-height: 0.9;
 }
-
 .card__weight-number {
   font-size: 42px;
+}
+.card__text {
+  color: white;
+  text-align: center;
 }
