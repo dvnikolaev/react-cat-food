@@ -20,7 +20,7 @@ const TheCard = ({
 }) => {
   
   const classSelect = () => {
-    return selectedId === id ? "active" : "";
+    return selectedId.includes(id) ? "active" : "";
   };
 
   const classDisable = () => {
@@ -31,7 +31,14 @@ const TheCard = ({
     if (isDisable) {
       return null;
     }
-    setSelectedId(id);
+    let localArray = [];
+
+    if (selectedId.includes(id)) {
+      localArray = selectedId.filter(item => item !== id);  
+    } else {
+      localArray = selectedId.concat([id]);
+    }
+    setSelectedId(localArray);
   };
 
   return (

@@ -22,7 +22,7 @@ const SubText = ({
       </p>
     );
   }
-  if (selectedId === id) {
+  if (selectedId.includes(id)) {
     return <p className={`card__subtext ${classSelect}`}>{description}</p>;
   }
   return (
