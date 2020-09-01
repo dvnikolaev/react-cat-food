@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #1698D9;
+  --secondary-color-text: #666;
+  --primary-selected-color: #D91667;
+}
 @font-face {
   font-family: "Exo";
   src: url("../fonts/Exo2.0-Thin.otf") format("opentype");
@@ -18,4 +23,12 @@
   font-family: "Exo", sans-serif;
   font-size: 36px;
   text-align: center;
+}
+
+.text-color--secondary {
+  color: var(--secondary-color-text);
+}
+.text--secondary {
+  color: var(--secondary-color-text);
+  font-size: 14px;
 }
