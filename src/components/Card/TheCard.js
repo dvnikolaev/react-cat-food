@@ -1,6 +1,6 @@
 import React from "react";
 
-const TheCard = ({ taste, weight, count, giftCount, isHappy }) => {
+const TheCard = ({ taste, weight, count, giftCount, isHappy, id, setSelectedId, selectedId }) => {
   const renderGift = () => {
     if (giftCount === 1) {
       return <p className="card__gift text--secondary">мышь в подарок</p>;
@@ -26,16 +26,24 @@ const TheCard = ({ taste, weight, count, giftCount, isHappy }) => {
 
   const renderWeight = () => {
     return (
-      <div className="card__weight">
+      <div className={`card__weight ${classSelect()}`}>
         <span className="card__weight-number">{weight}</span>
         кг
       </div>
     );
   };
 
+  const classSelect = () => {
+    return selectedId === id ? 'active' : '';
+  }
+
+  const selectId = () => {
+    setSelectedId(id);
+  } 
+
   return (
     <li className="card-item">
-      <button className="card-wrapper">
+      <button className={`card-wrapper ${classSelect()}`} onClick={selectId}>
         <div className="card">
           <p className="card__subheader text-color--secondary">
             Сказочное заморское яство
