@@ -7,12 +7,13 @@ const SubText = ({
   selectedId,
   id,
   classDisable,
-  classSelect,
-  selectId
+  selectId,
+  setIsShow
 }) => {
 
-  const select = (e) => {
-    selectId(e);
+  const select = () => {
+    selectId();
+    setIsShow(true);
   }
 
   if (isDisable) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import SubHeader from "./Parts/SubHeader";
 import Gift from "./Parts/Gift";
@@ -18,10 +18,20 @@ const TheCard = ({
   selectedId,
   isDisable,
 }) => {
+
+  const [isShow,setIsShow] = useState(false);
+
+  const isSelectedId = () => {
+    return selectedId.includes(id);
+  }
   
   const classSelect = () => {
-    return selectedId.includes(id) ? "active" : "";
+    return isSelectedId() ? "active" : "";
   };
+
+  const classIsShow = () => {
+    return isShow ? "show" : "";
+  }
 
   const classDisable = () => {
     return isDisable ? "disable" : "";
@@ -31,21 +41,20 @@ const TheCard = ({
     if (isDisable) {
       return null;
     }
-    let localArray = [];
-    e.target.classList.remove('show');
 
-    if (selectedId.includes(id)) {
-      localArray = selectedId.filter(item => item !== id);  
+    let localArray = [];
+
+    if (isSelectedId()) {
+      localArray = selectedId.filter(item => item !== id); 
+      setIsShow(false); 
     } else {
       localArray = selectedId.concat([id]);
     }
     setSelectedId(localArray);
   };
-
-  const mouseLeave = (e) =>{
-    if (selectedId.includes(id) && e.target.classList.contains('card-wrapper')){
-      e.target.classList.add('show');
-    } 
+  
+  const setShowClass = () => {
+    return isSelectedId() ? setIsShow(true) : '';
   }
 
   return (
@@ -53,10 +62,11 @@ const TheCard = ({
       <button
         className={`card-wrapper 
                     ${classSelect()} 
-                    ${classDisable()}`
+                    ${classDisable()}
+                    ${classIsShow()}`
         }
         onClick={selectId}
-        onMouseLeave={mouseLeave}
+        onMouseLeave={setShowClass}
       >
         <div className="card">
           <SubHeader className={classSelect} />
@@ -77,6 +87,7 @@ const TheCard = ({
         classDisable={classDisable}
         classSelec={classSelect}
         selectId={selectId}
+        setIsShow={setIsShow}
       />
     </li>
   );
